@@ -24,6 +24,16 @@ public class Funcoes {
 
     System.out.println(dobrar(20)); // resultado: 40
 
+    // 4 - Retorno em variável
+    String r1 = verificarPar(numero);
+
+    String r2 = verificarPar(3);
+
+    System.out.println(r1);
+    System.out.println(r2);
+
+    int x = dobrar(soma2(2, 4));
+    System.out.println(x);
     }
 
     
@@ -37,7 +47,7 @@ public class Funcoes {
 
     public static void soma(int a, int b) {
        int resultado = a + b;
-        System.out.println("O resultado da é: " + resultado);
+        System.out.println("O resultado da soma é: " + resultado);
     }
 
     public static void saudar(String nome) {
@@ -45,8 +55,21 @@ public class Funcoes {
     }
 
     // Note que aqui definimos que o retorno é um int e não um void!
+    // Parâmetros de funções diferentes podem ter o mesmo nome (o 'n' se repete!)
     public static int dobrar(int n){
         return n * 2;
     }
+
+    public static String verificarPar(int n) {
+        if (n % 2 == 0){
+            return "O número " + n + " é par!";
+        } else {
+             return "O número " + n + " é impar!";
+        }
+    }
+
+    public static int soma2(int a, int b) {
+        return a + b;
+     }
 
 }

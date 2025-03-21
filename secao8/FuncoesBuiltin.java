@@ -24,5 +24,24 @@ public class FuncoesBuiltin {
         String fraseModificada = frase.toUpperCase();
         System.out.println(fraseModificada);
 
+        // 11 - Funções do Math
+
+        // Raiz quadrada
+        System.out.println(Math.sqrt(26));
+
+        // Potência
+        System.out.println(Math.pow(2, 3));
+
+        // Valor absoluto
+        System.out.println(Math.abs(-10));
+        System.out.println(Math.abs(10));
+
+        // Valor máximo (maior)
+        System.out.println(Math.max(100, 10));
+
+        // Atribuição a variáveis
+        double raizQuadrada = Math.sqrt(99);
+        System.out.println("A raiz quadrada de 99 é: " + raizQuadrada);
+
     }
 }

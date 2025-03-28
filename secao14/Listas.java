@@ -1,6 +1,5 @@
 package secao14;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Listas {
@@ -180,6 +179,119 @@ public class Listas {
         int[] teste = new int[3];
         System.out.println(Arrays.toString(teste)); // [0, 0, 0]
 
+        // 7 - Adicionando novos itens a arrays
+
+        // Método 1: Criando um novo array e copiando os elementos com loops
+
+        // Criamos um array que tem como base o comprimento de 'numeros' + 1 índice
+        int [] novoArray = new int[numeros.length + 1];
         
-     }
+        // Loop para copiar os dados de 'numeros' para 'novoArray'
+        for (int i = 0; i < numeros.length; i++){
+            novoArray[i] = numeros[i];
+        }
+
+        System.out.println(Arrays.toString(novoArray)); // [2, 4, 6, 8, 10, 1, 14, 16, 0]
+
+        // O ultimo elemento do array é o 0, se quissemos acessar e alterar ele, poderiamos fazer da seguinte forma, note que não sabemos quantos elementos existem no array, então só subtraimos 1 do comprimento total dele!
+
+        novoArray[novoArray.length -1] = 7; 
+        System.out.println(Arrays.toString(novoArray)); // [2, 4, 6, 8, 10, 1, 14, 16, 7]
+
+        // Método 2: Utilizando o arrayCopy para copiar os elementos
+
+        // Criação do array que irá guardar os elementos de 'frutas'
+        String[] novoFrutas = new String[frutas.length + 1];
+
+        // Sintaxe: Array antigo, posição inicial, Array novo, posição inicial, e limite da cópia, como queremos copiar tudo usamos o comprimento do array 'frutas' como base!
+        System.arraycopy(frutas, 0, novoFrutas, 0, frutas.length);
+
+        novoFrutas[novoFrutas.length - 1] = "Abacaxi";
+
+        System.out.println(Arrays.toString(novoFrutas)); // [Abacate, Banana, Manga, Abacaxi]
+
+        // Método 3: Usando ArrayList
+
+        // <Tipo de dado> nomeDoArray
+        java.util.ArrayList<String> listaFrutas = new java.util.ArrayList<>(Arrays.asList("Maça", "Banana", "Laranja"));
+        
+
+        // A impressão de ArrayLists não precisa de 'toString'
+        System.out.println(listaFrutas); // [Maça, Banana, Laranja]
+
+        // Arraylists permitem usar métodos para realizar ações, tal como adicionar elementos no array!
+        listaFrutas.add("Manga");
+        System.out.println(listaFrutas); // [Maça, Banana, Laranja, Manga]
+
+        // 8 - Problema de Reference Trap
+        int[] arrayOriginal = {1,2,3};
+        // Vamos supor que já programamos bastante coisa e queremos reutilizar os valores desse array
+        int[] arrayCopia = arrayOriginal;
+
+        arrayCopia[0] = 10;
+
+        // Perceba que o valor 10 foi inserido incorretamente no arrayOriginal
+        System.out.println(Arrays.toString(arrayOriginal)); // [10, 2, 3]
+        System.out.println(Arrays.toString(arrayCopia)); // [10, 2, 3]
+
+        // Podemos evitar isso através do processo de clonagem de arrays
+        int[] arrayClone = arrayOriginal.clone();
+
+        // Se alterarmos os valores do clone...
+        arrayClone[2] = 100;
+
+        // Não alteramos o valor do array que foi clonado!
+        System.out.println(Arrays.toString(arrayOriginal)); // [10, 2, 3]
+        System.out.println(Arrays.toString(arrayClone)); // [10, 2, 100]
+
+        // 9 - Arrays 2D (Matrizes)
+        // [[1, 2], [2, 3]]
+        // array[0][1] = 2
+
+        // Note o [][] para inicializar a matriz!
+        int[][] matriz = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        System.out.println(matriz[1][1]); // 5
+        System.out.println(matriz[2][2]); // 9
+        System.out.println(matriz[2][0]); // 7
+
+        // Criando um array 2D vazio e preechendo-o, dessa forma criamos uma estrutura similar a de cima!
+        int[][] tabela = new int[3][3];
+
+        // Sem loops
+        tabela[0][0] = 10;
+        tabela[1][1] = 20;
+        tabela[2][2] = 30;
+
+        // Impressão de matrizes
+        // int[] se refere ao tipo de dado, um array de inteiros!
+        for(int[] linha: tabela){
+            System.out.println(Arrays.toString(linha));
+            // [10, 0, 0]
+            // [0, 20, 0]
+            // [0, 0, 30]
+        }
+
+        // Com loops aninhados
+        int[][] grade = new int[4][5];
+
+        for(int m = 0; m < grade.length; m++){
+            for (int n = 0; n < grade[m].length; n++){
+                grade[m][n] = m * n;
+            }
+        }
+
+        for(int[] linha: grade){
+            System.out.println(Arrays.toString(linha));
+            //  [0, 0, 0, 0, 0]
+            //  [0, 1, 2, 3, 4]
+            //  [0, 2, 4, 6, 8]
+            //  [0, 3, 6, 9, 12]
+            // Os valores que são multiplicados começam em 0!
+        }
+     }  
 }

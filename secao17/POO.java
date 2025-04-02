@@ -62,6 +62,30 @@ public class POO {
     // Mesma lógica pra idade!
     alguem.setIdade(24);
     System.out.println("Essa pessoa tem: " + alguem.getIdade() + " anos!");
-    }
-}
+
+    // 5 - Setters
+
+    ContaBancaria ContaDaAna = new ContaBancaria();
+    ContaDaAna.setTitular(null); // Nome do titular inválido!
+    ContaDaAna.setTitular(""); // Nome do titular inválido!
+    ContaDaAna.setTitular("Ana"); // Execução correta
+
+    ContaDaAna.setSaldo(-11); // O valor precisa ser positivo!
+    ContaDaAna.setSaldo(40); // Execução correta
+
+    ContaDaAna.mostrarDados(); // Titular: Ana / Saldo: 40.0
+
+    System.out.println(ContaDaAna.getTitular()); // Ana
+    System.out.println(ContaDaAna.getSaldo()); // R$ 40.0
+
+    // 6 - Lógica em Getters e Setters
+
+    Produto Camisa = new Produto();
+    Camisa.setNome("a"); // O nome enviado não atende aos critérios!
+    Camisa.setNome("Camisa Polo"); // Execução correta
+    System.out.println(Camisa.getNome()); // CAMISA POLO
+    Camisa.setPreco(-1); // O produto não pode ter um preço negativo!
+    Camisa.setPreco(20.9999); // Execução correta
+    System.out.println(Camisa.getPreco()); // R$21,00
+}}
     

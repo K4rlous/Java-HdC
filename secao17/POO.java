@@ -87,5 +87,19 @@ public class POO {
     Camisa.setPreco(-1); // O produto não pode ter um preço negativo!
     Camisa.setPreco(20.9999); // Execução correta
     System.out.println(Camisa.getPreco()); // R$21,00
+
+    // 7 - Método dentro de método
+    System.out.println(Camisa.getProdutoInfo()); // Nome: CAMISA POLO , Preço: R$21,00
+    Camisa.aplicarDesconto(10);
+    // Desconto de 10.0% aplicado!
+    // Nome: CAMISA POLO , Preço: R$18,90
+
+    // 8 - Construtores
+    Livro meuLivro = new Livro("A busca onírica por Kadath", "H P Lovecraft", 19.99);
+    Livro meuLivro2 = new Livro();
+    // SEM O CONSTRUTOR  
+    meuLivro2.exibirInfo(); // Título: Título teste, Autor: Autor, Preço: 12.99
+    // COM O CONSTRUTOR
+    meuLivro.exibirInfo(); // Título: A busca onírica por Kadath, Autor: H P Lovecraft, Preço: 19.99
 }}
     

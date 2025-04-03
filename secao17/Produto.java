@@ -32,4 +32,28 @@ public class Produto {
         return String.format("R$%.2f", preco);
     }
 
+    public String getProdutoInfo(){
+        // Note que usamos os métodos getters e setters que fizemos
+        return "Nome: " + this.getNome() + " , Preço: " + this.getPreco();
+    }
+
+    public void aplicarDesconto(double porcentagem){
+        if(porcentagem > 0 && porcentagem <= 100){
+            // Usamos o método abaixo para saber quantos reais equivalem o desconto dado. e subtraimos esse valor do preço do objeto!
+            double desconto = calcularDesconto(porcentagem);
+            double precoFinal = this.preco - desconto;
+            this.setPreco(precoFinal);
+            System.out.println("Desconto de " + porcentagem + "% aplicado!");
+            System.out.println(this.getProdutoInfo());
+        } else {
+            System.out.println("Porcentagem Inválida!");
+        }
+    }
+    // Método privado para somente ser usado aqui na classe!
+    private double calcularDesconto(double porcentagem){
+        // O preço do objeto * porcentagem / por 100
+        // Então se o produto custa 50 reais com desconto de 15% ele perde 7,5 reais de valor!
+        return (this.preco * porcentagem) / 100;
+    }
+
 }

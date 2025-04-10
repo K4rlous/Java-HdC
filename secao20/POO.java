@@ -2,6 +2,7 @@ package secao20;
 
 public class POO {
     public static void main(String[] args) {
+
         
         // 1 - Object Composition (Composição de objetos)
         Motor motor1 = new Motor("V8", 450);
@@ -54,5 +55,37 @@ public class POO {
 
         System.out.println(q1.calcularArea()); // 16.0
         System.out.println(c1.calcularArea()); // 32.169908772759484
-    }
-}
+
+        // 5 - Super
+        Funcionario funcionario = new Funcionario("Carlos", 3000);
+        funcionario.exibirDetalhes(); // Nome do funcionário: Carlos
+
+        Gerente gerente = new Gerente("Marcos", 5000, 1000);
+        gerente.exibirDetalhes(); // Nome do funcionário: Marcos
+                                  // Bonus adicional de: 1000.0
+ 
+        System.out.println(funcionario.calcularBonus()); // 300.0
+        System.out.println(gerente.calcularBonus()); // 1500.0
+
+        // 6 - Classe Abstrata
+        InstrumentoMusical violao = new Violao("Violão");
+        InstrumentoMusical bateria = new Bateria("Bateria");
+
+        violao.exibirDetalhes(); // Instrumento: Violão
+        bateria.exibirDetalhes(); // Instrumento: Bateria
+        violao.tocar(); // Tocando as cordas do: Violão
+        bateria.tocar(); // Batendo nos tambores da:  Bateria
+
+        // 7 - Interfaces
+        // Note que tal como as classes abstratas, primeiro usamos o nome da 
+        // Superclasse 'Pagamento' e só depois usamos os nomes das subclasses
+        // sendo elas CartaoCredito e TransferenciaBancaria!
+        Pagamento cartao = new CartaoCredito();
+        Pagamento trans = new TransferenciaBancaria();
+
+        cartao.processarPagamento(100); // Pagamento de R$100.0, via cartão de crédito.
+        cartao.exibirRecibo(100); // Recibo do pagamento com valor de R$100.0
+
+        trans.processarPagamento(150); // Pagamento de R$150.0, via transferência bancária.
+        trans.exibirRecibo(150); // Recibo do pagamento com valor de R$150.0
+}}

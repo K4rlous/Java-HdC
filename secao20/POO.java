@@ -87,5 +87,21 @@ public class POO {
         cartao.exibirRecibo(100); // Recibo do pagamento com valor de R$100.0
 
         trans.processarPagamento(150); // Pagamento de R$150.0, via transferência bancária.
-        trans.exibirRecibo(150); // Recibo do pagamento com valor de R$150.0
+        trans.exibirRecibo(150); // Recibo do pagamento com valor de R$150.
+        
+        // 8 - Múltiplas Interfaces
+        Documento doc = new Documento("Arquivo de texto");
+        doc.imprimir(); // Imprimindo o documento
+        doc.salvar(); // Salvando o documento
+        doc.instrucaoParaSalvar(); // Instruções!
+
+        // 9 - Default Methods nas Interfaces
+        CalculadoraAvancada calc = new CalculadoraAvancada();
+        System.out.println(calc.somar(12, 20)); // 32
+        System.out.println(calc.multiplicar(2, 5)); // pipipipopopo 10
+
+        // 10 - Polimorfismo
+        InstrumentoMusical violino = new Violino("Violino");
+        violino.exibirDetalhes(); // Instrumento: Violino
+        violino.tocar(); // Tocando o Violino
 }}

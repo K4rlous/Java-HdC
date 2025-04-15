@@ -1,7 +1,10 @@
 package secao21;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 
 public class Erros {
     public static void main(String[] args) {
@@ -108,7 +111,42 @@ public class Erros {
             // Erro: Saldo insuficiente para sacar 6000.0
         }
 
+        // 6 - throws em métodos
+        // Note o encadeamento de catchs, se tirarmos os tratamentos
+        // o código não rodará, quando se herda uma função ou classe com
+        // throws, é obrigatório tratar os erros dela também!
+        try {
+            processarArquivo("/var/ww/arquivo.txt");
+        } catch (FileNotFoundException e) {
+            System.out.println("Erro: " + e.getMessage());
+        } catch (IOException e){
+            System.out.println("Erro: " + e.getMessage());
+        }
+
+        // 7 - Encadeamento de exceções
+        try {
+            abrirArquivo(null);
+        } catch (Exception e) {
+            System.out.println("Mensagem: " + e.getMessage());
+            System.out.println("Causa: " + e.getCause());
+        }
+
+        // 8 - Multicatch
+        try {
+            processarArquivo(null);
+        } catch (NullPointerException | IOException e) {
+            System.out.println("Erro Multicatch : " + e.getMessage());
+        } 
+
+        // 9 - Relançando as exceções
+        try {
+            processarDados(null);
+        } catch (Exception e) {
+            System.out.println("Outra coisa");
+            System.out.println("Pilha de execução: " + e.getStackTrace());
+        }
     }
+
     // Função para a atividade 4
     public static void validarIdade(int idade){
         if (idade < 18){
@@ -116,5 +154,49 @@ public class Erros {
         }
         // Isso não será impresso se a idade for menor que 18 
         System.out.println("Idade válida: " + idade);
+    }
+
+    // Função para a atividade 6
+    // Aqui temos duas exceções, a primeira é quando o arquivo não é encontrado
+    // a segunda é para quando o caminho do arquivo não é encontrado 
+    public static void processarArquivo(String caminho) throws FileNotFoundException, IOException{
+        if(caminho == null || caminho.isEmpty()){
+            throw new IOException("Caminho inválido");
+        }
+        File arquivo = new File(caminho);
+        if(!arquivo.exists()){
+            throw new FileNotFoundException("Arquivo não encontrado");
+        }
+        System.out.println("Arquivo encontrado com sucesso!");
+    }
+
+    // Função para atividade 7
+    public static void abrirArquivo(String caminho){
+        try {
+            if(caminho == null){
+                throw new NullPointerException("Caminho nulo");
+            }
+            throw new FileNotFoundException("Arquivo não encontrado");
+        } catch (FileNotFoundException e) {
+            // Criação da exceção com sua mensagem
+            NullPointerException npe = new NullPointerException("Erro ao processar arquivo");
+            // Definimos que a causa da exceção acima é a exceção 'FileNotFound'
+            npe.initCause(e);
+            // Lançamos a exceção criada
+            throw npe;
+            // Encadeamos uma exceção como causa da outra e vice-versa
+        }
+    }
+
+    // Função para atividadde 9 
+    public static void processarDados(String dados) throws Exception{
+        try {
+            if(dados == null){
+                throw new NullPointerException("Os dados são nulos");
+            }
+        } catch (Exception e) {
+            System.out.println("Tratamento, criação de log");
+            throw e; // <----
+        }
     }
 }

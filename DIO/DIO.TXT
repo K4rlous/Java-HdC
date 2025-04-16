@@ -6,7 +6,9 @@ Pilares POO - Classes e objetos, Encapsulamento, Abstração, Herança, Polimorf
 
 Código -> Bytecode -> ....
 
-Bytecode e JVM tornam o Java portátil
+Bytecode e JVM tornam o Java 
+
+A JVM transforma o Bytecode em algoritmo que será interpretado pelo sistema!
 
 WORA (Write once, run anywhere)
 
@@ -42,4 +44,6 @@ No CMD 'java -version' retorna a versão atual do Java instalado
 
 Todo projeto Java sem um sistema de gerenciamento de projetos (como o Maven) possui pastas como 'lib', 'src' e arquivos que documentam a estrutura do projeto como um todo como o 'readme' que inclui informações sobre o projeto
 
-A integração do Vscode com o Github, permite usar o Gitclone no Vscode para clonar nossos repositórios
+A integração do Vscode com o Github, permite usar o Gitclone no Vscode para clonar nossos repositórios, CTRL + SHIFT + P para criar novos projetos Java e ver outras funcionalidades!
+
+JRE (Java Runtime Enviroment) é necessário apenas para rodar código Java, e não desenvolver!

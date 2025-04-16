@@ -47,3 +47,9 @@ Todo projeto Java sem um sistema de gerenciamento de projetos (como o Maven) pos
 A integração do Vscode com o Github, permite usar o Gitclone no Vscode para clonar nossos repositórios, CTRL + SHIFT + P para criar novos projetos Java e ver outras funcionalidades!
 
 JRE (Java Runtime Enviroment) é necessário apenas para rodar código Java, e não desenvolver!
+
+As quatro principais plataformas de desenvolvimento Java são: 
+Java SE (Java Platform, Standard Edition)
+Java EE (Java Platform, Enterprise Edition)
+Java ME (Java Platform, Micro Edition)
+Java FX

@@ -42,4 +42,4 @@ No CMD 'java -version' retorna a versão atual do Java instalado
 
 Todo projeto Java sem um sistema de gerenciamento de projetos (como o Maven) possui pastas como 'lib', 'src' e arquivos que documentam a estrutura do projeto como um todo como o 'readme' que inclui informações sobre o projeto
 
-A integração do Vscode com o Github, permite usar o Gitclone no Vscode para clonar nossos repositórios
+A integração do Vscode com o Github, permite usar o Gitclone no Vscode para clonar nossos repositórios, CTRL + SHIFT + P para criar novos projetos Java e ver outras funcionalidades!

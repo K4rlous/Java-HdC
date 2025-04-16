@@ -1,0 +1,45 @@
+BootCamp Bradesco 2025
+
+        Introdução à plataforma Java:
+
+Pilares POO - Classes e objetos, Encapsulamento, Abstração, Herança, Polimorfismo
+
+Código -> Bytecode -> ....
+
+Bytecode e JVM tornam o Java portátil
+
+WORA (Write once, run anywhere)
+
+Robustez: Gerenciamento de memória forte, coleta de lixo, tratamento de exceção e mecanismos de verificação de tipo de dados
+
+Segurança: Recursos de criptografia e descriptografia
+
+Java compila gerando Bytecode e a JVM (Java Virtual Machine) interpreta o arquivo em Bytecode durante a execução
+
+Thread = subprocesso leve e independente de um programa em execução, Java é multithread logo possui vários threads sendo executados simultaneamente
+
+Java = Cidade de origem de um tipo de café 
+
+
+        Ambiente de desenvolvimento Java
+
+Funções com autocomplete e inteliSense, formatação de palavras e blocos de Código, análises de erro de sintaxe, compilação de programas e depuração (acompanhamento) de execução do programa
+
+IDeS principais: Eclipse, Netbeans, Intellij, Vscode
+
+Maven = Umas das formas de empacotamento de projetos em java, ferramenta de automação de compilação também usada para construir e gerenciar projetos escritos em C#, Ruby, Scala, e outras linguagens
+
+Snippet = Termo de programação para uma pequena região de código-fonte reutilizável, código de máquina ou texto. Normalmente, estas são unidades operacionais formalmente definidas para serem incorporadas em módulos de programação maiores.
+
+Instalar o JDK (Vscode automotiza com o Java Coding pack, que inclui o Vscode, JDK e extensões úteis e essenciais!) ele também pode ser usado para atualizar um Vscode sem o JDK e as extensões!
+
+O Eclipse possui versões (packages) para desenvolvimento Java puro e uma versão específica para desenvolvimento Web! a escolha de diretório no Eclipse é meio chata, mas uma convenção legal é: c/dev/ws/'trabalho' / dev de desenvolvimento, ws de workspace! e c/dev/projetos/'projeto' para projetos!
+
+
+JDK PATH = c://Arquivos de Programas / Java / JDK (várias versões?)
+
+No CMD 'java -version' retorna a versão atual do Java instalado
+
+Todo projeto Java sem um sistema de gerenciamento de projetos (como o Maven) possui pastas como 'lib', 'src' e arquivos que documentam a estrutura do projeto como um todo como o 'readme' que inclui informações sobre o projeto
+
+A integração do Vscode com o Github, permite usar o Gitclone no Vscode para clonar nossos repositórios

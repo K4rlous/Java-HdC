@@ -6,7 +6,9 @@ Pilares POO - Classes e objetos, Encapsulamento, Abstração, Herança, Polimorf
 
 Código -> Bytecode -> ....
 
-Bytecode e JVM tornam o Java portátil
+Bytecode e JVM tornam o Java 
+
+A JVM transforma o Bytecode em algoritmo que será interpretado pelo sistema!
 
 WORA (Write once, run anywhere)
 

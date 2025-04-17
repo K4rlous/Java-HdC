@@ -48,6 +48,18 @@ A integração do Vscode com o Github, permite usar o Gitclone no Vscode para cl
 
 JRE (Java Runtime Enviroment) é necessário apenas para rodar código Java, e não desenvolver!
 
+As quatro principais plataformas de desenvolvimento Java são: 
+Java SE (Java Platform, Standard Edition)
+Java EE (Java Platform, Enterprise Edition)
+Java ME (Java Platform, Micro Edition)
+Java FX
+
+As quatro principais plataformas de desenvolvimento Java são: 
+Java SE (Java Platform, Standard Edition)
+Java EE (Java Platform, Enterprise Edition)
+Java ME (Java Platform, Micro Edition)
+Java FX
+
                 Versionamento de Código com Git e GitHub 
 
 Controlam as versões de um arquivo ao longo do tempo, registram histórico de atualizações do arquivo, gerenciam quais foram as alterações, datas, autores e etc. Organização, Controle e Segurança

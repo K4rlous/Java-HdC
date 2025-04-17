@@ -1,6 +1,6 @@
 BootCamp Bradesco 2025
 
-        Introdução à plataforma Java:
+                Introdução à plataforma Java:
 
 Pilares POO - Classes e objetos, Encapsulamento, Abstração, Herança, Polimorfismo
 
@@ -23,7 +23,7 @@ Thread = subprocesso leve e independente de um programa em execução, Java é m
 Java = Cidade de origem de um tipo de café 
 
 
-        Ambiente de desenvolvimento Java
+                Ambiente de desenvolvimento Java
 
 Funções com autocomplete e inteliSense, formatação de palavras e blocos de Código, análises de erro de sintaxe, compilação de programas e depuração (acompanhamento) de execução do programa
 
@@ -47,3 +47,71 @@ Todo projeto Java sem um sistema de gerenciamento de projetos (como o Maven) pos
 A integração do Vscode com o Github, permite usar o Gitclone no Vscode para clonar nossos repositórios, CTRL + SHIFT + P para criar novos projetos Java e ver outras funcionalidades!
 
 JRE (Java Runtime Enviroment) é necessário apenas para rodar código Java, e não desenvolver!
+
+                Versionamento de Código com Git e GitHub 
+
+Controlam as versões de um arquivo ao longo do tempo, registram histórico de atualizações do arquivo, gerenciam quais foram as alterações, datas, autores e etc. Organização, Controle e Segurança
+
+Tipos: VCS Centralizado (CVCS) = Centralizam os dados em um servidor <- se ficar fora do ar o projeto fica inacessível, se houver perca de dados (e tu não tiver backup) todo o projeto é perdido
+
+VCS Distribuido (DVCS) = Clona o repositório incluindo o histórico de versões, cada clone é como um backup, possibilita fluxo de trabalho flexivel, possibilita trabalhar sem rede de internet!
+
+O Git é um sistema de controle de versão distribuído amplamente usado por desenvolvedores para gerenciar projetos de software. Ele permite que você acompanhe mudanças no código, trabalhe em equipe simultaneamente e volte a versões anteriores quando necessário. O Git organiza o histórico de alterações em "commits", facilitando o rastreamento e a colaboração eficiente. Com ele, você pode criar ramificações (branches) para desenvolver novos recursos ou corrigir bugs sem afetar o código principal. 
+
+git clone -> Clona um repositório git existente para um novo diretório local
+git commit -> Salva as alterações no repositório
+git pull -> Puxa as alterações do repositório remoto para o local (busca e mescla)
+git push -> Empurra as alterações do repositório local para o remoto
+commit -> pull -> push
+git --version no CMD pra ver a versão do Git
+
+GitBash (Aberto em algum diretório) permite usar comandos para configurar o Git / CTRL + L limpa o terminal!
+git config - permite ver alterações, tais como alterar as variáveis de configuração
+
+Como todos os nossos repositórios tem de estar em nosso nome as alterações devem estar em escopo global
+
+git config --global user.name "Fulano" / Definir o nome do usuário
+git config --global user.email fulano@gmail.com / Definir o email do usuário
+Ambos comandos sem argumentos (nome ou email) vão retornar os nomes e emails respectivamente usados
+
+Esses dados serão vinculados aos commits, mudar o nome ou email não irá alterar commits já feitos!
+
+git config init.defaultBranch / Retorna o nome da branch
+git config --global init.defaultBranch algo / Muda o nome da branch para 'algo'
+
+git config --global --list / Lista todas as configurações globais (sem o global ia mostrar tudo)
+
+O Github é uma plataforma de hospedagem de código para controle de versão com Git e colaboração
+
+(Ela fez o login no Git com o Token do Github??)
+Nós usamos SSH para logar (Secure Shell) OU NÃO?
+
+git config --global credential.helper store / Salva as credênciais 
+git config --global credential.helper cache / Salva temporariamente (util se dividir a máquina)
+git config --global credential.helper / Mostra como está salvando
+
+git config --global --show-origin credential.helper / Mostra onde as credênciais estão salvas e o 'modo' dela
+
+Criando e Clonando Repositórios
+
+Existem duas formas de obter um repositório Git na sua máquina: 1. Transformando um diretório local que não está sob controle de versão, num repositório Git; 2. Clonando um repositório Git existente
+
+Comandos do GitBash
+1°
+mkdir repo-local / Cria o diretório 'repo-local'
+cd repo-local / Muda o diretório para 'repo-local'
+git init / Transforma o diretório atual em um repositório git (main)
+cd .git / Muda o diretório para 'git' (git_dir)
+ls / Lista os arquivos (entre eles há um arquivo de configurações)
+cat config / Mostra os dados do arquivo de configurações mencionado.
+
+2°
+Copia-se o código https do repositório no Github
+git clone 'url' / Copia o repositório da url
+git clone 'url' 'nome' / Copia o repositório da url e muda o nome da pasta para 'nome'
+
+
+git remote -v / Mostra os repositórios remotos aos quais está vinculado
+git remote add 'nome' 'url do repositório ao qual queremos vincular' (padrão deixar o nome 'origin') / Conecta o repositório local com um repositório remoto
+
+git clone 'url' --branch 'nome-da-branch' --single-branch / Clona apenas a branch escolhida pelo nome, se não passar o nome ele clona a principal seja a 'main' ou a 'master'

@@ -1,18 +1,22 @@
-## Getting Started
+# DIO | Exemplo de README
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Um exemplo de README, feito durante a aula de versionamento de código com **Git** e **GitHub** utilizando a lingugem **Markdown** na plataforma da [DIO](https://www.dio.me)
 
-## Folder Structure
+## 📚 Documentação
+-[Documentação Git](https://git-scm.com/docs/git/pt_BR)
 
-The workspace contains two folders by default, where:
+-[Documentação GitHub](https://docs.github.com/pt/get-started)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## 💻 Resumo das aulas
+| Aulas | Resumos |
+|-------|---------|
+| Salvando alterações no repositório local | [Aula](https://web.dio.me/track/bradesco-java-cloud-native/course/versionamento-de-codigo-com-git-e-github/learning/599dd3dd-d189-474f-a55c-22f37b4472da?autoplay=1)
+| Exemplo | Exemplo de novo kkkk |
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+```
+git init
+```
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Referências
+- [Digital Innovation One](https://www.dio.me)

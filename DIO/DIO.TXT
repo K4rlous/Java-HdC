@@ -127,3 +127,109 @@ git remote -v / Mostra os repositórios remotos aos quais está vinculado
 git remote add 'nome' 'url do repositório ao qual queremos vincular' (padrão deixar o nome 'origin') / Conecta o repositório local com um repositório remoto
 
 git clone 'url' --branch 'nome-da-branch' --single-branch / Clona apenas a branch escolhida pelo nome, se não passar o nome ele clona a principal seja a 'main' ou a 'master'
+
+git status / é utilizado para verificar o estado atual do repositório Git. Ele informa quais mudanças foram realizadas, quais arquivos estão no estado "staged" (prontos para serem commitados), quais estão modificados mas ainda não "staged", e também destaca quaisquer arquivos não rastreados
+
+Untracked files / Esses são arquivos que estão no diretório do seu projeto, mas o Git ainda não está rastreando. Eles não fazem parte de nenhum commit. Para começar a rastreá-los, você precisa adicioná-los à área de stage usando git add.
+
+Modified files / São arquivos que foram alterados desde o último commit, mas ainda não foram adicionados à área de stage. Você pode prepará-los para o commit usando git add ou deixá-los como estão enquanto continua trabalhando neles.
+
+Staged files / Esses arquivos foram adicionados à área de stage e estão prontos para serem incluídos no próximo commit. Um commit grava essas alterações no histórico do repositório.
+
+Markdown / Markdown é uma linguagem de marcação leve e simples, criada para formatar texto de forma fácil e legível. Com ela, você pode criar documentos estruturados que incluem cabeçalhos, listas, tabelas, links, imagens e mais, sem precisar de um editor de texto complexo. O destaque do Markdown é que o texto ainda é legível sem renderização, o que facilita tanto a escrita quanto a colaboração.
+
+Use o https://readme.so/pt para criar arquivos README decentes com linguagem markdown, um exemplo disso será visto no README do "Primeiro-Projeto-Java", use WINDOWS + . para usar emojis!
+
+git add 'arquivo.txt' / é usado para adicionar arquivos ou mudanças ao "stage" (área de preparação), deixando-os prontos para serem incluídos no próximo commit. Em resumo, ele coloca suas alterações sob rastreamento do Git, git add . adiciona TODOS os arquivos
+
+git commit / é usado para criar um commit, que registra as alterações preparadas na área de stage no histórico do repositório. O -m permite que você inclua uma mensagem descritiva diretamente no comando, explicando o que foi alterado. É uma prática recomendada escrever mensagens claras e informativas para facilitar o entendimento no futuro. git commit -m "Adiciona funcionalidade X ao projeto"
+
+git log / O comando git log é usado para visualizar o histórico de commits do repositório. Ele lista os commits feitos, mostrando informações como o autor, a data e a mensagem associada a cada commit. É uma maneira de revisar o progresso do projeto, possui variações que incluem 1 linha ou mais, pesquise!
+
+touch arquivo.txt /  usado principalmente em sistemas baseados em Unix (como Linux e macOS) para criar arquivos vazios ou atualizar a data e hora de modificação de um arquivo existente.
+
+O git reconhece pastas vazias, alguns projetos possuem o arquivo gitkeep.txt dentro de diretórios, isso serve para o git reconhecer os diretórios
+
+Desfazendo alterações 
+
+Vamos supor que você deu git init na pasta errada, era pra ser  /Nova pasta, mas você colocou /Nova pasta/.git/, para remover isso basta usar
+rm - rf .git
+e o sistema voltará para Nova
+
+Se apagarmos ou alterarmos um arquivo o git status indicará a mudança! caso queiramos reverter ela basta usar
+git restore arquivo.md
+CUIDADO, ele descarta todas as alterações feitas localmente!
+
+Alterar mensagem de commit (que por sua vez aparece no git log)
+git commit --amend -m"mensagem nova!"
+
+desfazer commit
+git reset --soft 'hashcode'
+git reset --mixed 'hashcode'
+git reset --hard  'hashcode'
+
+soft / Mantém as mudanças na área de stage (prontas para o próximo commit). Útil se você quer desfazer um commit mas preparar as mesmas alterações para um novo commit. Isso desfaz o último commit, mas deixa os arquivos prontos para serem commitados novamente.
+
+mixed / Remove as alterações da área de stage, mas as mantém nos arquivos de trabalho. Útil se você quer fazer ajustes antes de preparar os arquivos novamente. Isso desfaz o commit e remove os arquivos da área de stage, mas mantém os arquivos modificados.
+
+hard / Desfaz o commit e descarta completamente as alterações nos arquivos. Desfaz o commit e descarta completamente as alterações nos arquivos. Isso desfaz o último commit e retorna o repositório ao estado anterior, descartando todas as mudanças
+
+git reflog / é usado para visualizar o histórico de referências de um repositório. Ele exibe uma lista de alterações feitas nas referências do Git (como commits, resets, merges, etc.), permitindo que você veja e recupere estados anteriores mesmo que tenham sido descartados do log normal. Ele ajuda a rastrear commits "perdidos" ou que foram sobrescritos. Pode ser usado para recuperar alterações depois de comandos como git reset --hard. (Cima = mais recente, baixo = menos recente!)
+
+Forçar alterações nos commits pode causar problemas. É recomendado corrigir os problemas criando um novo commit!
+
+Abrir um repositório no github e apertar a tecla '.' vai abrir o projeto em um 'vscode online'!
+
+branches
+Ou branch é uma ramificação do projeto, um ponteiro móvel para um commit no histórico do repositório, quando você cria uma nova branch a partir de outra existente, a nova se inicia apontando para o mesmo commit da branch que estava quando foi 
+
+commit 0 <-- commit 1 <-- commit 2(branch main)
+
+a branch aponta para o commit 2, mas ele por si só aponta para o commit anterior
+Quando se trabalha com múltiplas branches em um repositório Git, cada branch representa uma linha de desenvolvimento independente. Isso permite que diferentes alterações ou funcionalidades sejam desenvolvidas paralelamente sem interferir nas outras. Aqui está como funciona, Cada branch tem seu próprio ponteiro para um commit. Por exemplo:
+
+main (commit 5) <-- commit 4 <-- commit 3
+feature-x (commit 6) <-- commit 4 <-- commit 3
+
+Nesse caso, main e feature-x compartilham parte do histórico, mas depois divergem
+
+git checkout / é usado principalmente para trocar entre branches ou restaurar arquivos, mas pode ter várias funcionalidades dependendo do contexto. Aqui estão os usos mais comuns:
+
+Trocar entre branches: git checkout nome-da-branch
+
+Criar e mudar para uma nova branch: git checkout -b nova-
+
+Restaurar arquivos ao estado de um commit específico:
+git checkout HEAD arquivo.txt
+Isso restaura o arquivo ao último estado commitado.
+
+Restaurar o estado de todo o diretório:
+Caso queira desfazer todas as alterações não commitadas
+git checkout HEAD .
+
+git merge / O git merge serve para integrar as mudanças de uma branch em outra. Ele preserva o histórico de commits e une os trabalhos de diferentes desenvolvedores ou funcionalidades.
+- Se não houver novos commits na branch de destino, o Fast-forward Merge é usado: ele simplesmente avança o ponteiro da branch sem criar um novo commit.
+- Caso ambas as branches tenham novos commits, um Merge Commit é criado para registrar a combinação de mudanças.
+- Se houver alterações conflitantes (ex.: o mesmo arquivo editado em ambas as branches), o Git solicita que você resolva manualmente antes de concluir o merge.
+
+Exemplo básico:
+git checkout main
+git merge feature-x
+
+Aqui, a branch feature-x será mesclada na main.
+
+git fetch / O comando git fetch é usado para baixar atualizações de branches remotas (como commits, tags e metadados) para o repositório local, sem alterar as branches locais ou fazer merges. Ele sincroniza o repositório local com o remoto, permitindo que você veja as mudanças antes de aplicá-las ou integrá-las. Por exemplo, após um git fetch, você pode comparar as diferenças ou decidir fazer um merge ou rebase manualmente 
+
+Para buscar de uma branch remota específica:
+git fetch origin nome-da-branch
+
+Para buscar de um repositório remoto específico (caso você tenha configurado mais de um):
+git fetch nome-do-remoto
+
+Por padrão, o git fetch pega todas as atualizações do repositório remoto associado (geralmente chamado de origin). Isso não altera sua branch local até que você decida aplicar as mudanças, como com git merge ou git pull.
+
+
+
+
+
+

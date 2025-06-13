@@ -75,5 +75,81 @@ public class Arquivo {
         } catch (Exception e) {
             System.out.println("Erro ao escrever no arquivo " + e.getMessage());
         }
+
+        // 3 - Serialização de objetos
+        Pessoa pessoa = new Pessoa("Someone", 66);
+
+        System.out.println(pessoa.getNome());
+
+        // Inicio do processo de serialização
+        /*
+         oss é o nome de uma variável, qualquer nome serve, usamos oss para referênciar o proprio ObjectOutputStream
+
+         arquivos serializados tem a extensão .ser
+         */
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(currentDir + "pessoa.ser"))) {
+
+            oos.writeObject(pessoa);
+            System.out.println("Objeto serializado com sucesso");
+
+        } catch (Exception e) {
+            System.out.println("Erro ao serializar objeto " + e.getMessage());
+        }
+
+        // Deserialização de objetos
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(currentDir + "pessoa.ser"))) {
+            
+            // Criação da variável para deserializar o objeto, note o tipecast que usamos para converter o objeto para sua classe 'natural'
+            Pessoa pessoa2 = (Pessoa) ois.readObject();
+            System.out.println("Nome: " + pessoa2.getNome());
+            System.out.println("Idade: " + pessoa2.getIdade());
+
+        } catch (Exception e) {
+            System.out.println("Erro ao deserializar objeto " + e.getMessage());
+        }
+
+        // SERIALIZAR = OUTPUT
+        // DESERIALIZAR = INPUT
+
+        // 4 - Manipulação de binários
+        // Copia de imagem
+        try (
+            // Colocamos os dois argumentos assim para evitar 'resource leaks'
+            FileInputStream fis = new FileInputStream(currentDir + "imagem.jpg");
+            FileOutputStream fos = new FileOutputStream(currentDir + "copia_imagem.jpg");
+        ) {
+            // Acima ditamos a fonte dos bytes e o destino dele, abaixo vamos passar os bytes do original para o arquivo novo!
+
+            int byteData;
+            // O != -1 indica o final do arquivo!
+            while((byteData = fis.read()) != -1){
+                fos.write(byteData);
+            }
+            // Enquanto houver bytes no arquivo fonte, eles serão escritos no arquivo copia
+            System.out.println("Arquivo copiado com sucesso");
+
+        } catch (Exception e) {
+            System.out.println("Erro ao copiar arquivo " + e.getMessage());
+        }
+
+        // Copia de video, usamos Buffered para arquivos maiores
+        try (
+            BufferedInputStream bis = new BufferedInputStream(new FileInputStream(currentDir + "video.mkv"));
+            BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(currentDir + "copia_video.mkv")); 
+            ) {
+            
+            // Por ser um arquivo maior usaremos um array de bytes
+            byte[] buffer = new byte[1024]; // Buffer 1kb em 1kb, buffers menores garantem integridade caso haja instabilidade na rede, dessa forma os pacotes perdidos não corrompem o 
+            int bytesLidos;
+
+            while((bytesLidos = bis.read(buffer)) != -1){
+                bos.write(buffer, 0, bytesLidos);
+                // Argumentos: dados, intervalo, e o numero de bytes a serem escritos
+            }
+            System.out.println("Video copiado com sucesso");
+
+        } catch (Exception e) {
+            System.out.println("Erro ao copiar video " + e.getMessage());
+        }
     }
 }

@@ -1,7 +1,15 @@
 package secao22;
 
-// Pra importar TUDO de java.io
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import javax.imageio.ImageIO;
 
 public class Arquivo {
     public static void main(String[] args) {
@@ -150,6 +158,120 @@ public class Arquivo {
 
         } catch (Exception e) {
             System.out.println("Erro ao copiar video " + e.getMessage());
+        }
+
+        // 5 - Manipulação de imagens
+        // Vamos inserir um texto no centro de imagem.jpg
+        try {
+            
+            BufferedImage imagem = ImageIO.read(new File(currentDir + "imagem.jpg"));
+            if(imagem == null){
+                System.out.println("A imagem não pode ser carregada");
+                return;
+            }
+            Graphics g2d = imagem.createGraphics();
+
+            // Definindo propriedades do texto
+            g2d.setFont(new Font("Arial", Font.BOLD,50));
+            FontMetrics fm = g2d.getFontMetrics();
+            String texto = "Marca d'água";
+
+            // Centralizar texto na imagem
+            int larguraTexto = fm.stringWidth(texto);
+            int alturaTexto = fm.getHeight();
+
+            // Posicionamento, feito através de calculo x = hori y = vert
+            int x = (imagem.getWidth() - larguraTexto) / 2;
+            int y = (imagem.getHeight() - alturaTexto) / 2 + fm.getAscent();
+
+            // Desenhar retângulo
+            g2d.setColor(Color.black);
+            g2d.fillRect(x - 10, y - fm.getAscent(), larguraTexto + 20, alturaTexto);
+
+            // Desenhar o texto sobre o retângulo
+            g2d.setColor(Color.red);
+            // Usamos o x e y que calculamos previamente!
+            g2d.drawString(texto, x, y);
+            // Liberação de recursos
+            g2d.dispose();
+
+            // Salvar a imagem
+            File outputFile = new File(currentDir + "imagem_com_texto.png");
+            ImageIO.write(imagem, "png", outputFile);
+            System.out.println("Imagem modificada com sucesso");
+
+        } catch (Exception e) {
+            System.out.println("Erro ao processar imagem " + e.getMessage());
+        }
+
+        // 6 - Manipulação de arquivos e diretórios
+
+        // Criando um diretório
+        Path caminhoDiretorio = Paths.get(currentDir + "diretorioNovo");
+
+        try {
+            if(!Files.exists(caminhoDiretorio)){
+                Files.createDirectories(caminhoDiretorio);
+                System.out.println("Diretório criado com sucesso: " + caminhoDiretorio.toString());
+            } else {
+                System.out.println("Diretório já existe!");
+            }
+        } catch (Exception e) {
+            System.out.println("Erro ao criar diretório " + e.getMessage());
+        }
+        /*
+         Perceba que nunca instanciamos Paths ou Files!
+         Nós conseguimos usar os métodos pois eles são static!
+         */
+
+
+         // Criar, copiar e mover arquivos
+
+         Path caminhoArquivoOriginal = Paths.get(currentDir + "arquivo_criado.txt");
+         Path caminhoArquivoCopia = Paths.get(currentDir + "arquivo_criado_copia.txt");
+         Path caminhoArquivoMovido = Paths.get(currentDir, "diretorioNovo", "arquivo_movido.txt");
+
+         try {
+            // Criar
+             if(!Files.exists(caminhoArquivoOriginal)){
+                Files.createFile(caminhoArquivoOriginal);
+                System.out.println("Arquivo criado com sucesso: " + caminhoDiretorio.toString());
+            } else {
+                System.out.println("Arquivo já existe!");
+            }
+
+            // Copiar
+            // O if é só pra evitar um erro de sintaxe no contexto geral do código!
+            if(!Files.exists(caminhoArquivoCopia)){
+                // É a linha abaixo que importa!
+                Files.copy(caminhoArquivoOriginal, caminhoArquivoCopia);
+            }
+
+            // Mover
+            Files.move(caminhoArquivoCopia, caminhoArquivoMovido);
+
+
+         } catch (Exception e) {
+            System.out.println("Erro ao tentar manipular arquivo" + e.getMessage());
+        }
+
+
+        // 7 - Arquivos temporários
+        try {
+            Path arquivoTemporario = Files.createTempFile("meuTempFile", ".txt");
+ 
+            System.out.println("Arquivo criado em: " + arquivoTemporario.toAbsolutePath());
+
+            Files.writeString(arquivoTemporario, "Brincadeira bicho!");
+
+            String conteudo =  Files.readString(arquivoTemporario);
+
+            System.out.println("Conteudo do arquivo temporário: " + conteudo);
+
+            Files.deleteIfExists(arquivoTemporario);
+
+        } catch (Exception e) {
+            System.out.println("Erro ao criar arquivo temporário" + e.getMessage());
         }
     }
 }

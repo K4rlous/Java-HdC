@@ -9,6 +9,9 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
+import java.util.zip.ZipOutputStream;
 import javax.imageio.ImageIO;
 
 public class Arquivo {
@@ -272,6 +275,111 @@ public class Arquivo {
 
         } catch (Exception e) {
             System.out.println("Erro ao criar arquivo temporário" + e.getMessage());
+        }
+
+        // Arquivos ZIP
+        // Compressão
+        Path arquivoOriginal = Paths.get(currentDir + "arquivo.txt");
+        Path arquivoZip = Paths.get(currentDir + "arquivo_comprimido.zip");
+        // Try with resources
+        try (
+            ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(arquivoZip.toFile()));
+            FileInputStream fis = new FileInputStream(arquivoOriginal.toFile());
+        )
+         {
+            // Cria uma entrada ZIP para o arquivo
+            ZipEntry zipEntry = new ZipEntry(arquivoOriginal.getFileName().toString());
+            zos.putNextEntry(zipEntry);
+
+            // Lê o conteudo do arquivo e grava no ZIP (buffer)
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+
+            while((bytesRead = fis.read(buffer)) != -1){
+                zos.write(buffer, 0, bytesRead);
+            }
+
+            // Fechar a entrada do ZIP
+            zos.closeEntry();
+            System.out.println("Arquivo compactado com sucesso!");
+
+        } catch (Exception e) {
+            System.out.println("Erro ao compactar arquivo " + e.getMessage());
+        }
+
+        // Descompressão
+        Path arquivoZipado = Paths.get(currentDir + "arquivo_comprimido.zip");
+        Path destino = Paths.get(currentDir + "descompactado");
+        // Try with resources
+        try (
+            ZipInputStream zis = new ZipInputStream(new FileInputStream(arquivoZipado.toFile()));
+        ) {
+            
+            ZipEntry zipEntry;
+
+            // Criar o diretório se não existir
+            if(!Files.exists(destino)){
+                Files.createDirectories(destino);
+            }
+
+            // Iteração sobre os arquivos ZIP
+            while((zipEntry = zis.getNextEntry()) != null){
+
+                Path caminhDestino = destino.resolve(zipEntry.getName());
+
+                // Try normal
+                try(
+                    FileOutputStream fos = new FileOutputStream(caminhDestino.toFile())
+                ){
+                    byte[] buffer = new byte[1024];
+                    int bytesRead;
+
+                    while((bytesRead = zis.read(buffer)) != -1){
+                    fos.write(buffer, 0, bytesRead);
+            }
+                }
+                System.out.println("Arquivo descompactado " + caminhDestino);
+                zis.closeEntry();
+            }
+
+        } catch (Exception e) {
+            System.out.println("Erro ao descompactar arquivo " + e.getMessage());
+        }
+
+        // 9 - Manipulação de CSV
+        // Leitura
+        String arquivoCSV = currentDir + "dados.csv";
+        String linha;
+        String separador = ",";
+
+        // Try with resources
+        try (BufferedReader br = new BufferedReader(new FileReader(arquivoCSV))) {
+            // Funcionará enquanto não houver mais linhas
+            while((linha = br.readLine()) != null){
+                // Dividir a string / explodir a string em array
+                String[] dados = linha.split(separador);
+                System.out.println("Nome: " + dados[0] + ", Idade: " + dados[1] + ", Cidade: " + dados[2]);
+            }
+
+        } catch (Exception e) {
+            System.out.println("Erro ao ler csv: " + e.getMessage());
+        }
+
+        // Escrita
+        String arquivoEscritaCSV = currentDir + "dadosEscrita.csv";
+        // Try with resources
+        try (FileWriter writer = new FileWriter(arquivoEscritaCSV)) {
+            
+            // Inserção de linha a linha, respeitando o separador (,) e quebrando a linha no final 
+            writer.append("Nome,Idade,Cidade\n");
+            writer.append("Isabel,22,Rio de Janeiro\n");
+            writer.append("Maria,45,Floripa\n");
+            writer.append("Igor,15,Guarulhos\n");
+
+            System.out.println("Conteudo gravado no CSV com sucesso");
+
+        } catch (Exception e) {
+            System.out.println("Erro ao escrever no csv: " + e.getMessage());
         }
     }
 }

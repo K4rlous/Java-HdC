@@ -1,7 +1,11 @@
 package secao23;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class Generics {
     public static void main(String[] args) {
@@ -66,6 +70,42 @@ public class Generics {
         // Note que se declarassemos <Integer> acima, abaixo no loop for teriamos que declarar Integer também! o uso de <Number> requer o uso do Object!
         for(Object numero : numeros3){
             System.out.println(numero);
+
+
+        // 5 - Generics com collections
+        // Lista de números inteiros
+        List<Integer> listaInteiros = new ArrayList<>();
+        listaInteiros.add(20);
+        listaInteiros.add(145);
+        listaInteiros.add(54);
+        // Essa lista não aceitará números com digitos decimais, ex: 3.14 e qualquer outro de dado que não seja 'Integer'
+        for (Number numeral : listaInteiros ){
+            System.out.println(numeral); // 20 145 54
+        }
+
+        // Criação de set
+        Set<String> conjuntoDePalavras = new HashSet<>();
+        conjuntoDePalavras.add("Pamonha");
+        conjuntoDePalavras.add("Iguana");
+        conjuntoDePalavras.add("Iguana");
+        for (String palavra : conjuntoDePalavras){
+            System.out.println(palavra); // Pamonha Iguana
+        }
+        // Note que o output não retornou a palavra 'Iguana' repetidamente, isso ocorre porque sets aceitam apenas elementos únicos não repetidos!
+
+        // Criação de map
+        // Definimos a chave e o valor, a chave sendo 'String' e o valor sendo 'Integer'
+        Map<String, Integer> mapaDeIdades = new HashMap<>();
+        // Usamos 'put' invés de 'add' para inserir dados
+        mapaDeIdades.put("Carlos", 24);
+        mapaDeIdades.put("Ana", 20);
+        // O print de map é diferente:
+        for(Map.Entry<String, Integer> entrada : mapaDeIdades.entrySet()){
+            System.out.println(entrada.getKey() + " tem " + entrada.getValue() + " anos");
+            // Note o uso dos getters, com map sempre trabalhamos com chave e valores!
+        }
+
+
         }
     }
 

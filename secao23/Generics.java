@@ -105,8 +105,22 @@ public class Generics {
             // Note o uso dos getters, com map sempre trabalhamos com chave e valores!
         }
 
+        // 6 - Generics com interfaces
 
-        }
+        Armazenamento<String> aTexto = new ArmazenamentoTextos();
+        aTexto.salvar("Teste");
+        System.out.println(aTexto.recuperar()); // Teste
+
+        Armazenamento<Integer> aInteiro = new ArmazenamentoNumeros();
+        aInteiro.salvar(10);
+        System.out.println(aInteiro.recuperar()); // 10
+
+        // 7 - Restrição multipla de tipos
+        Pato pato = new Pato();
+        CriaturaGenerica<Pato> criaturaPato = new CriaturaGenerica<>(pato);
+        criaturaPato.usarHabilidades();
+        // A única criatura capaz de ser uma criatura genérica é o pato, pois sua classe condiz com os requisitos que são descritos na classe criaturaGenerica, sendo eles 1: a classe deve extender a classe animal, 2 - deve implementar as interfaces Voador e Nadador!
+    }
     }
 
     // Obter maior valor entre 2 valores de forma genérica e implementando o 'Comparable'

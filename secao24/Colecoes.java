@@ -1,7 +1,9 @@
 package secao24;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -292,8 +294,80 @@ public class Colecoes {
                     .collect(Collectors.joining(" "));
          */
 
+        // 11 - Ordenação com Comparator
+        List<Pessoa> pessoas = new ArrayList<>();
+        pessoas.add(new Pessoa("Carlos", 30));
+        pessoas.add(new Pessoa("Ana", 25));
+        pessoas.add(new Pessoa("Ana", 18));
+        pessoas.add(new Pessoa("Beltrano", 40));
+        pessoas.add(new Pessoa("Fulano", 20));
 
+        // Ordenando pelo nome
+        pessoas.sort(Comparator.comparing(Pessoa::getNome));
+
+        for (Pessoa pessoa : pessoas) {
+            System.out.println("Pessoa ordenada por nome: " + pessoa);
+        }
+
+        // Ordenando pelo nome e idade
+        pessoas.sort(Comparator.comparing(Pessoa::getNome)
+            .thenComparing(Pessoa::getIdade));
+        
+        for (Pessoa pessoa : pessoas) {
+            System.out.println("Pessoa ordenada por nome e idade: " + pessoa);
+          }
+
+        // 12 - Uso avançado de Streams
+        // Listas dentro de listas
+        List<List<String>> listaDeListas = Arrays.asList(
+            Arrays.asList("Maça", "Banana", "Laranja"),
+            Arrays.asList("Banana", "Mamão", "Morango"),
+            Arrays.asList("Laranja", "Abacaxi", "Uva")
+        );
+
+        // Usando flatMap para achatar a lista de listas em uma única lista
+        List<String> frutas = listaDeListas.stream()
+            .flatMap(List::stream) // Achata a lista de listas em uma única lista
+            .collect(Collectors.toList());
+        
+        System.out.println("Lista de frutas achatada: " + frutas);
+
+        // Pipeline
+        List<Integer> resultado = numeros.stream()
+            .filter(numero -> numero > 10) // Filtra números maiores que 10
+            .map(numero -> numero * 2) // Multiplica cada número por 2
+            .sorted() // Ordena os números
+            .collect(Collectors.toList()); // Coleta o resultado em uma lista
+        
+        System.out.println("Resultado do pipeline: " + resultado);
+
+        
+        // 13 - Collectors
+        List<Produto> produtos = Arrays.asList(
+            new Produto("Maçã", "Fruta"),
+            new Produto("Rádio", "Eletrônico"),
+            new Produto("Batata", "Legume"),
+            new Produto("Telefone", "Eletrônico")
+        );
+
+        // Agrupando produtos por categoria
+        Map<String, List<Produto>> produtosPorCategoria = produtos.stream()
+            .collect(Collectors.groupingBy(p -> p.categoria));
+        
+        System.out.println("Produtos não agrupados: " + produtos);
+        System.out.println("Produtos agrupados por categoria: " + produtosPorCategoria);
+
+        // Particionando os produtos
+        Map<Boolean, List<Produto>> eletronicosEnaoEletronicos = produtos.stream()
+            .collect(Collectors.partitioningBy(p -> p.categoria.equals("Eletrônico")));
+        System.out.println("Produtos eletrônicos e não eletrônicos: " + eletronicosEnaoEletronicos);
+        
+        // Contando quantos produtos existem
+        Long totalProdutos = produtos.stream()
+            .collect(Collectors.counting());
+        System.out.println("Total de produtos: " + totalProdutos);
 
     }
+
 
 }

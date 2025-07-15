@@ -177,8 +177,8 @@ public class Regex {
         // 6 - Validação de data e horario
         String regexData = "^([0-2][0-9]|3[01])-(0[1-9]|1[0-2])-([0-9]{4})$"; // Valida datas no formato dd-mm-aaaa
         String[] datas = {
-            "01-01-2020", "31-12-2020", "29-02-2020", // Válidas
-            "31-04-2020", "30-02-2020", "32-01-2020"  // Inválidas
+            "01-01-2020", "31-12-2020", "29-02-2020", // 5 Válidas
+            "31-04-2020", "30-02-2020", "32-01-2020"  // 1 Inválidas
         };
         System.out.println("\nValidação de datas:");
         for (String data : datas) {

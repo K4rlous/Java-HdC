@@ -1,0 +1,366 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "StageSceneExample",
+            "request": "launch",
+            "mainClass": "helloworldfx.StageSceneExample",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "helloworldfx.Main",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "HelloWorld",
+            "request": "launch",
+            "mainClass": "secao1.HelloWorld",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "ContadorDePalavras",
+            "request": "launch",
+            "mainClass": "secao10_ContadorDePalavras.ContadorDePalavras",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Exercicios",
+            "request": "launch",
+            "mainClass": "secao11.Exercicios",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Loops",
+            "request": "launch",
+            "mainClass": "secao11.Loops",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "LoopsB",
+            "request": "launch",
+            "mainClass": "secao11.LoopsB",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "CalculadoraSimples",
+            "request": "launch",
+            "mainClass": "secao12_CalculadoraSimples.CalculadoraSimples",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "JogoAdivinhacao",
+            "request": "launch",
+            "mainClass": "secao13_JogoAdivinhacao.JogoAdivinhacao",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "AvancandoArrays",
+            "request": "launch",
+            "mainClass": "secao14.AvancandoArrays",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Exercicios(1)",
+            "request": "launch",
+            "mainClass": "secao14.Exercicios",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Listas",
+            "request": "launch",
+            "mainClass": "secao14.Listas",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "JogoDaPalavra",
+            "request": "launch",
+            "mainClass": "secao15_JogoDaForca.JogoDaPalavra",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "VerificadorForcaSenha",
+            "request": "launch",
+            "mainClass": "secao16_VerificadorForcaSenha.VerificadorForcaSenha",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Exercícios",
+            "request": "launch",
+            "mainClass": "secao17.Exercícios",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "POO",
+            "request": "launch",
+            "mainClass": "secao17.POO",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "POO2",
+            "request": "launch",
+            "mainClass": "secao17.POO2",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "SimuladorLoteria",
+            "request": "launch",
+            "mainClass": "secao18_Loteria.SimuladorLoteria",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "SistemaCadastroAluno",
+            "request": "launch",
+            "mainClass": "secao19_CadastroAlunos.SistemaCadastroAluno",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Exercicios(2)",
+            "request": "launch",
+            "mainClass": "secao2.Exercicios",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "TesteScanner",
+            "request": "launch",
+            "mainClass": "secao2.TesteScanner",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Variavel",
+            "request": "launch",
+            "mainClass": "secao2.Variavel",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "POO2(1)",
+            "request": "launch",
+            "mainClass": "secao20.Avançando.POO2",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Exercicios(3)",
+            "request": "launch",
+            "mainClass": "secao20.Exercicios.Exercicios",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "POO(1)",
+            "request": "launch",
+            "mainClass": "secao20.POO",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Erros",
+            "request": "launch",
+            "mainClass": "secao21.Erros",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Arquivo",
+            "request": "launch",
+            "mainClass": "secao22.Arquivo",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Generics",
+            "request": "launch",
+            "mainClass": "secao23.Generics",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Colecoes",
+            "request": "launch",
+            "mainClass": "secao24.Colecoes",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Regex",
+            "request": "launch",
+            "mainClass": "secao25.Regex",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Anotacoes",
+            "request": "launch",
+            "mainClass": "secao26.Anotacoes",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "secao27.HelloWorldFx.src.App",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Tabuada",
+            "request": "launch",
+            "mainClass": "secao3.Tabuada",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "MediaAluno",
+            "request": "launch",
+            "mainClass": "secao4.MediaAluno",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Condicionais",
+            "request": "launch",
+            "mainClass": "secao5.Condicionais",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Condicionais2",
+            "request": "launch",
+            "mainClass": "secao5.Condicionais2",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Exercicios(4)",
+            "request": "launch",
+            "mainClass": "secao5.Exercicios",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Exercicios2",
+            "request": "launch",
+            "mainClass": "secao5.Exercicios2",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Exercicios3",
+            "request": "launch",
+            "mainClass": "secao5.Exercicios3",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "OperadoresLogicos",
+            "request": "launch",
+            "mainClass": "secao5.OperadoresLogicos",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Switch",
+            "request": "launch",
+            "mainClass": "secao5.Switch",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "CalculadoraIMC",
+            "request": "launch",
+            "mainClass": "secao6_calcIMC.CalculadoraIMC",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "ClassificacaoProduto",
+            "request": "launch",
+            "mainClass": "secao7_ClassificacaoProduto.ClassificacaoProduto",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Exercicios(5)",
+            "request": "launch",
+            "mainClass": "secao8.Exercicios",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "Funcoes",
+            "request": "launch",
+            "mainClass": "secao8.Funcoes",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "FuncoesB",
+            "request": "launch",
+            "mainClass": "secao8.FuncoesB",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "FuncoesBuiltin",
+            "request": "launch",
+            "mainClass": "secao8.FuncoesBuiltin",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "FuncoesC",
+            "request": "launch",
+            "mainClass": "secao8.FuncoesC",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "ConversorDeTemperatura",
+            "request": "launch",
+            "mainClass": "secao9_ConversorTemperatura.ConversorDeTemperatura",
+            "projectName": "Java HdC_1cad2f83"
+        },
+        {
+            "type": "java",
+            "name": "ConversorSimplificado",
+            "request": "launch",
+            "mainClass": "secao9_ConversorTemperatura.ConversorSimplificado",
+            "projectName": "Java HdC_1cad2f83"
+        }
+    ]
+}

@@ -6,6 +6,38 @@
     "configurations": [
         {
             "type": "java",
+            "name": "StackPaneAnchor",
+            "request": "launch",
+            "mainClass": "helloworldfx.StackPaneAnchor",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "GridPaneExample",
+            "request": "launch",
+            "mainClass": "helloworldfx.GridPaneExample",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "BorderPaneExample",
+            "request": "launch",
+            "mainClass": "helloworldfx.BorderPaneExample",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "VBoxHBoxExample",
+            "request": "launch",
+            "mainClass": "helloworldfx.VBoxHBoxExample",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "StageSceneExample",
             "request": "launch",
             "mainClass": "helloworldfx.StageSceneExample",

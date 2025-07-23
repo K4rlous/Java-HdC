@@ -6,6 +6,38 @@
     "configurations": [
         {
             "type": "java",
+            "name": "RadioCheckboxRadioButtonExample",
+            "request": "launch",
+            "mainClass": "helloworldfx.RadioCheckboxRadioButtonExample",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "TextFieldTextAreaExample",
+            "request": "launch",
+            "mainClass": "helloworldfx.TextFieldTextAreaExample",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "ButtonLabelExampleextends",
+            "request": "launch",
+            "mainClass": "helloworldfx.ButtonLabelExampleextends",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "uttonLabelExampleextends",
+            "request": "launch",
+            "mainClass": "helloworldfx.uttonLabelExampleextends",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "StackPaneAnchor",
             "request": "launch",
             "mainClass": "helloworldfx.StackPaneAnchor",

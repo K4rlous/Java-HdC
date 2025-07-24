@@ -6,6 +6,46 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MultipleWindowsExample",
+            "request": "launch",
+            "mainClass": "helloworldfx.MultipleWindowsExample",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "CSStylingExample",
+            "request": "launch",
+            "mainClass": "helloworldfx.CSStylingExample",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "KeyboardMouseEvent",
+            "request": "launch",
+            "mainClass": "helloworldfx.KeyboardMouseEvent",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "ButtonClickExample",
+            "request": "launch",
+            "mainClass": "helloworldfx.ButtonClickExample",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "ComboboxListviewExample",
+            "request": "launch",
+            "mainClass": "helloworldfx.ComboboxListviewExample",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "RadioCheckboxRadioButtonExample",
             "request": "launch",
             "mainClass": "helloworldfx.RadioCheckboxRadioButtonExample",

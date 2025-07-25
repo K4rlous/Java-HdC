@@ -6,6 +6,38 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CanvasExample",
+            "request": "launch",
+            "mainClass": "helloworldfx.CanvasExample",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "ShapeDrawingExample",
+            "request": "launch",
+            "mainClass": "helloworldfx.ShapeDrawingExample",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "ImageViewExample",
+            "request": "launch",
+            "mainClass": "helloworldfx.ImageViewExample",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "AlertExample",
+            "request": "launch",
+            "mainClass": "helloworldfx.AlertExample",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "MultipleWindowsExample",
             "request": "launch",
             "mainClass": "helloworldfx.MultipleWindowsExample",

@@ -5,7 +5,6 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.stage.*;
 import javafx.scene.layout.*;
-import javafx.scene.input.*;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 

@@ -6,6 +6,22 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Quiz",
+            "request": "launch",
+            "mainClass": "secao30_Quiz.Quiz.src.Quiz",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Cronometro",
+            "request": "launch",
+            "mainClass": "secao29_Cronometro.Cronometro.src.Cronometro",
+            "projectName": "Java HdC_1cad2f83",
+            "vmArgs": "--module-path C:\\Users\\Carlos\\Downloads\\openjfx-21.0.8_windows-x64_bin-sdk\\javafx-sdk-21.0.8\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "Calculadora",
             "request": "launch",
             "mainClass": "secao28_calculadora.Calculadora.src.Calculadora",
